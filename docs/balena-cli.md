@@ -353,6 +353,7 @@ Examples:
 
 	$ balena fleet MyFleet
 	$ balena fleet myorg/myfleet
+	$ balena fleet myorg/myfleet --view
 
 ### Arguments
 
@@ -361,6 +362,10 @@ Examples:
 fleet name, slug (preferred), or numeric ID (deprecated)
 
 ### Options
+
+#### --view
+
+open fleet dashboard page
 
 ## fleet create &#60;name&#62;
 
@@ -680,6 +685,7 @@ Show information about a single device.
 Examples:
 
 	$ balena device 7cf02a6
+	$ balena device 7cf02a6 --view
 
 ### Arguments
 
@@ -688,6 +694,10 @@ Examples:
 the device uuid
 
 ### Options
+
+#### --view
+
+open device dashboard page
 
 ## device deactivate &#60;uuid&#62;
 
@@ -2727,6 +2737,7 @@ Examples:
 	$ balena push myFleet
 	$ balena push myFleet --source <source directory>
 	$ balena push myFleet -s <source directory>
+	$ balena push myFleet --source <source directory> --note "this is the note for this release"
 	$ balena push myFleet --release-tag key1 "" key2 "value2 with spaces"
 	$ balena push myorg/myfleet
 	
@@ -2842,6 +2853,10 @@ Instruct the builder to create the release as a draft. Draft releases are ignore
 by the 'track latest' release policy but can be used through release pinning.
 Draft releases can be marked as final through the API. Releases are created
 as final by default unless this option is given.
+
+#### --note NOTE
+
+The notes for this release
 
 # Settings
 
@@ -3208,6 +3223,7 @@ Examples:
 
 	$ balena deploy myFleet
 	$ balena deploy myorg/myfleet --build --source myBuildDir/
+	$ balena deploy myorg/myfleet --build --source myBuildDir/ --note "this is the note for this release"
 	$ balena deploy myorg/myfleet myRepo/myImage
 	$ balena deploy myFleet myRepo/myImage --release-tag key1 "" key2 "value2 with spaces"
 
@@ -3247,6 +3263,10 @@ Deploy the release as a draft. Draft releases are ignored
 by the 'track latest' release policy but can be used through release pinning.
 Draft releases can be marked as final through the API. Releases are created
 as final by default unless this option is given.
+
+#### --note NOTE
+
+The notes for this release
 
 #### -e, --emulated
 
